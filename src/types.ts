@@ -9,6 +9,8 @@ export interface CaseTranslation {
 
 export interface CaseItem {
   id: string;
+  categoryKey: string;
+  categoryTags?: string[];
   status: string;
   translations: Record<Locale, CaseTranslation>;
 }

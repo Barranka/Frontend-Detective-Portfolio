@@ -7,12 +7,14 @@ interface CaseCardProps {
 
 export default function CaseCard({ item, locale }: CaseCardProps) {
   const translation = item.translations[locale];
+  const statusLabel = locale === 'ru' ? (item.status === 'Solved' ? 'Решено' : item.status) : item.status;
+  const categoryClasses = item.categoryTags?.map((tag) => `category-${tag}`).join(' ') ?? `category-${item.categoryKey}`;
 
   return (
-    <article className="case-card">
+    <article className={`case-card ${categoryClasses}`}>
       <div className="case-card-top">
         <span className="case-index">CASE {item.id}</span>
-        <span className="case-status">{item.status}</span>
+        <span className="case-status">{statusLabel}</span>
       </div>
       <h3 className="case-title">{translation.title}</h3>
       <p className="case-category">{translation.category}</p>

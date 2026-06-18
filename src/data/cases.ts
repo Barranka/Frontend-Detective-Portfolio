@@ -3,18 +3,19 @@ import type { CaseItem } from '../types';
 export const caseFiles: CaseItem[] = [
   {
     id: '001',
+    categoryKey: 'performance',
     status: 'Solved',
     translations: {
       en: {
         title: 'Build Time: 40 min → 6 min',
-        category: 'Developer Experience',
+        category: 'Performance',
         summary:
           'The UI library build was taking 40+ minutes, blocking every release cycle. I audited the full pipeline, identified bottlenecks in Webpack configuration and parallelization, and restructured the build to cut time down to 6–8 minutes — a 6× improvement that made daily releases practical.',
         highlights: ['Webpack optimization', 'pipeline parallelization', 'CI infrastructure'],
       },
       ru: {
         title: 'Время сборки: 40 мин → 6 мин',
-        category: 'Developer Experience',
+        category: 'Производительность',
         summary:
           'Сборка UI-библиотеки занимала 40+ минут и блокировала каждый релизный цикл. Провела аудит пайплайна, нашла узкие места в конфигурации Webpack и параллелизации, реструктурировала сборку — время сократилось до 6–8 минут, то есть в 6 раз. Это сделало ежедневные релизы реальными.',
         highlights: ['оптимизация Webpack', 'параллелизация', 'CI-инфраструктура'],
@@ -23,18 +24,20 @@ export const caseFiles: CaseItem[] = [
   },
   {
     id: '002',
+    categoryKey: 'architecture-migration',
+    categoryTags: ['architecture', 'migrations'],
     status: 'Solved',
     translations: {
       en: {
         title: 'Vue 2 → Vue 3: Zero-Downtime Migration Across 7 Products',
-        category: 'Architecture / Migration',
+        category: 'Migration / Architecture',
         summary:
           'Migrating a shared UI library used by 7 products is a high-risk operation — any breaking change cascades everywhere. I designed a hybrid architecture that allowed both Vue 2 and Vue 3 consumers to coexist during the transition, ran a full component audit, and migrated incrementally with no production regressions.',
         highlights: ['hybrid architecture', 'component audit', 'incremental migration strategy'],
       },
       ru: {
         title: 'Vue 2 → Vue 3: миграция без простоя в 7 продуктах',
-        category: 'Архитектура / миграция',
+        category: 'Миграция / Архитектура',
         summary:
           'Миграция общей UI-библиотеки, которую используют 7 продуктов — высокорисковая операция: любой breaking change ломает всё сразу. Спроектировала гибридную архитектуру, позволившую потребителям на Vue 2 и Vue 3 сосуществовать во время перехода, провела полный аудит компонентов и мигрировала поэтапно — без критических регрессий в продакшене.',
         highlights: ['гибридная архитектура', 'аудит компонентов', 'стратегия поэтапной миграции'],
@@ -43,6 +46,7 @@ export const caseFiles: CaseItem[] = [
   },
   {
     id: '003',
+    categoryKey: 'performance',
     status: 'Solved',
     translations: {
       en: {
@@ -63,6 +67,7 @@ export const caseFiles: CaseItem[] = [
   },
   {
     id: '004',
+    categoryKey: 'ci-cd',
     status: 'Solved',
     translations: {
       en: {
@@ -83,18 +88,19 @@ export const caseFiles: CaseItem[] = [
   },
   {
     id: '005',
+    categoryKey: 'performance',
     status: 'Solved',
     translations: {
       en: {
         title: 'App Startup in 2 Seconds',
-        category: 'Frontend Performance',
+        category: 'Performance',
         summary:
           'The application was slow to load, hurting first impressions and retention. I ran a full bundle analysis, identified bloated dependencies and unnecessary synchronous imports, restructured the loading strategy, and brought startup time down to ~2 seconds — with measurable improvement in Core Web Vitals.',
         highlights: ['bundle analysis', 'dependency audit', 'lazy loading', 'Core Web Vitals'],
       },
       ru: {
         title: 'Запуск приложения за 2 секунды',
-        category: 'Frontend Performance',
+        category: 'Производительность',
         summary:
           'Приложение долго загружалось, что негативно сказывалось на первом впечатлении и удержании пользователей. Провела полный анализ бандла, нашла раздутые зависимости и лишние синхронные импорты, переработала стратегию загрузки — время запуска упало до ~2 секунд с измеримым улучшением Core Web Vitals.',
         highlights: ['анализ бандла', 'аудит зависимостей', 'lazy loading', 'Core Web Vitals'],
@@ -103,6 +109,7 @@ export const caseFiles: CaseItem[] = [
   },
   {
     id: '006',
+    categoryKey: 'architecture',
     status: 'Solved',
     translations: {
       en: {
@@ -123,41 +130,45 @@ export const caseFiles: CaseItem[] = [
   },
   {
     id: '007',
+    categoryKey: 'design-systems',
+    categoryTags: ['design-systems', 'architecture'],
     status: 'Solved',
     translations: {
       en: {
-        title: 'One Design System for Seven Products',
-        category: 'Design Systems',
+        title: 'Web Components UI Adaptation for Angular Integration',
+        category: 'Design Systems / Architecture',
         summary:
-          'Seven products were drifting apart visually and technically, with duplicated components and no shared standards. I designed and rolled out a unified design system based on Atomic Design principles — standardizing components, establishing documentation, and giving teams a single source of truth for UI.',
-        highlights: ['Atomic Design', 'component standardization', 'cross-team adoption', 'documentation'],
+          'A UI library originally built with Vue components needed to be integrated into an Angular project. The requirement was to enable usage of components as Web Components without dependency on the Vue runtime. I adapted the library for Web Components by defining an isolation layer, enabling Shadow DOM/style encapsulation, and redesigning the icon and style system to work correctly outside the Vue ecosystem. As a result, the components became framework-independent and could be used in Angular without losing visual consistency or suffering style conflicts.',
+        highlights: ['web components migration', 'framework-independent UI', 'style isolation', 'design system interoperability'],
       },
       ru: {
-        title: 'Единая дизайн-система для 7 продуктов',
-        category: 'Дизайн-системы',
+        title: 'Адаптация UI на Web Components для интеграции с Angular',
+        category: 'Дизайн-системы / Архитектура',
         summary:
-          'Семь продуктов расходились визуально и технически: компоненты дублировались, общих стандартов не было. Спроектировала и внедрила единую дизайн-систему на основе Atomic Design — стандартизировала компоненты, выстроила документацию и дала командам единый источник правды для UI.',
-        highlights: ['Atomic Design', 'стандартизация компонентов', 'внедрение в командах', 'документация'],
+          'UI-библиотека, изначально построенная на Vue-компонентах, должна была быть интегрирована в Angular-проект. Требовалось обеспечить использование компонентов как Web Components без привязки к Vue runtime. Провела адаптацию библиотеки под Web Components: выделила слой изоляции, обеспечила Shadow DOM/стилевую инкапсуляцию и переработала систему иконок и стилей для корректной работы вне Vue-экосистемы. В результате компоненты стали фреймворк-независимыми и могли использоваться в Angular без потери визуальной консистентности и конфликтов стилей.',
+        highlights: ['миграция на Web Components', 'фреймворк-независимый UI', 'изоляция стилей', 'интероперабельность дизайн-системы'],
       },
     },
   },
   {
     id: '010',
+    categoryKey: 'migrations',
+    categoryTags: ['migrations', 'performance'],
     status: 'Solved',
     translations: {
       en: {
-        title: 'High-Frequency WebSocket Streams at Scale',
-        category: 'Realtime Systems',
+        title: 'Webpack 4 → Webpack 5 Migration',
+        category: 'Migrations / Performance',
         summary:
-          'A high-load dashboard was receiving hundreds of WebSocket events per second, causing the UI to lag and state to desync. I redesigned the event processing layer with a reactive architecture, introduced stream throttling and selective state updates — making realtime actually real.',
-        highlights: ['WebSocket optimization', 'reactive architecture', 'stream throttling', 'state management'],
+          'Legacy Webpack 4 build configuration slowed product development: slow builds, inconsistent environment behavior, and three separate configs for dev, prod, and npm package builds. I migrated each config to Webpack 5, handled breaking changes like asset modules, caching, and resolution rules, and verified every build end-to-end. After migration, environment drift disappeared and all builds behaved consistently.',
+        highlights: ['webpack migration', 'build system upgrade', 'multi-config consistency', 'build stability'],
       },
       ru: {
-        title: 'Высокочастотные WebSocket-потоки на высоких нагрузках',
-        category: 'Realtime Systems',
+        title: 'Webpack 4 → Webpack 5 миграция',
+        category: 'Миграции / Производительность',
         summary:
-          'Высоконагруженный дашборд получал сотни WebSocket-событий в секунду — UI лагал, состояние рассинхронизировалось. Переработала слой обработки событий на реактивной архитектуре, внедрила троттлинг потоков и точечные обновления состояния — realtime стал по-настоящему реальным.',
-        highlights: ['оптимизация WebSocket', 'реактивная архитектура', 'троттлинг потоков', 'управление состоянием'],
+          'Легаси-сборка на Webpack 4 сдерживала продукт: медленные сборки, нестабильность окружений и три разные конфигурации для dev, prod и npm-пакета. Я мигрировала все конфигурации на Webpack 5, учла breaking changes (asset modules, caching, resolution rules) и проверила каждый тип сборки. После миграции устранила расхождения между окружениями и привела систему к единому предсказуемому поведению.',
+        highlights: ['webpack migration', 'обновление сборочной системы', 'согласованность многоконфигурной сборки', 'стабильность сборочного процесса'],
       },
     },
   },
