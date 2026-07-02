@@ -4,17 +4,10 @@ import type { Locale } from './types';
 import en from './locales/en';
 import ru from './locales/ru';
 import CaseCard from './components/CaseCard';
+import HeroVisual from './components/HeroVisual';
 import LanguageSwitcher from './components/LanguageSwitcher';
-import Mascot from './components/Mascot';
 
 const translations = { en, ru } as const;
-
-const metrics = [
-  { label: '10 000+ objects on the map optimization', ru: '10 000+ объектов — оптимизация карты' },
-  { label: '40 min → 6 min build', ru: '40 мин → 6 мин — время сборки' },
-  { label: '20+ components migrated to VUE 3', ru: '20+ компонентов мигрировано на VUE 3' },
-  { label: '0 manual release steps', ru: 'Релизы без ручных шагов' },
-];
 
 function App() {
   const [locale, setLocale] = useState<Locale>('ru');
@@ -53,7 +46,7 @@ function App() {
     <div className="page-shell">
       <header className="topbar">
         <div>
-          <div className="brand">Engineering Case Files</div>
+          <div className="brand">{t.brandTitle}</div>
         </div>
         <LanguageSwitcher locale={locale} onChange={setLocale} />
       </header>
@@ -61,22 +54,91 @@ function App() {
       <main>
         <section className="hero-panel">
           <div className="hero-copy">
-            <span className="eyebrow">{t.heroEyebrow}</span>
-            <h1>{t.heroTitle}</h1>
+            <h1>
+              <span>{t.heroTitle}</span>
+              <span className="hero-subtitle">{t.heroSubtitle}</span>
+            </h1>
             <p>{t.heroDescription}</p>
-            <p className="hero-note">{t.heroNote}</p>
+            <p>{t.heroDetails}</p>
+            <p>{t.heroStatement}</p>
+          </div>
 
-            <div className="badges-grid">
-              {metrics.map((metric) => (
-                <div key={locale === 'en' ? metric.label : metric.ru} className="badge-card">
-                  {locale === 'en' ? metric.label : metric.ru}
-                </div>
+          <aside className="hero-side">
+            <HeroVisual />
+            <div className="skills-panel">
+              <h2>{t.skillsTitle}</h2>
+              <div className="skills-list">
+                {t.skillsItems.map((item) => (
+                  <span key={item}>{item}</span>
+                ))}
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <section className="content-section">
+          <div className="section-header">
+            <div>
+              <span className="section-eyebrow">{t.approachEyebrow}</span>
+              <h2>{t.approachTitle}</h2>
+            </div>
+            <p>{t.approachDescription}</p>
+          </div>
+
+          <div className="principles-grid">
+            {t.approachItems.map((item) => (
+              <article key={item.title} className="principle-card">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="content-section">
+          <div className="section-header">
+            <span className="section-eyebrow">{t.teamValueEyebrow}</span>
+            <h2>{t.teamValueTitle}</h2>
+          </div>
+          <div className="team-value">
+            <div className="team-value-list">
+              {t.teamValueItems.map((item) => (
+                <article key={item.title}>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </article>
               ))}
             </div>
           </div>
+        </section>
 
-          <div className="hero-visual">
-            <Mascot />
+        <section className="content-section">
+          <div className="investigation-copy">
+            <span className="section-eyebrow">{t.investigationEyebrow}</span>
+            <h2>{t.investigationTitle}</h2>
+            <p>{t.investigationDescription}</p>
+          </div>
+          <div className="investigation-panel">
+            <div className="hero-timeline" aria-label={t.heroNote}>
+              {t.heroNote.split('→').map((step) => (
+                <span key={step.trim()}>{step.trim()}</span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="impact-section">
+          <div className="impact-header">
+            <span className="section-eyebrow">{t.impactEyebrow}</span>
+            <h2>{t.impactTitle}</h2>
+          </div>
+
+          <div className="impact-grid">
+            {t.impactItems.map((item) => (
+              <div key={item} className="impact-card">
+                {item}
+              </div>
+            ))}
           </div>
         </section>
 
@@ -114,7 +176,43 @@ function App() {
             ))}
           </div>
         </section>
+
+        <section className="final-cta">
+          <p>{t.finalCtaLead}</p>
+          <h2>{t.finalCtaTitle}</h2>
+          <p>{t.finalCtaDescription}</p>
+        </section>
       </main>
+
+      <footer className="footer" aria-label={t.footerTitle}>
+        <span>{t.footerTitle}</span>
+        <div className="footer-links">
+          <a
+            className="footer-link"
+            href="mailto:cat123_93@mail.ru"
+            aria-label={`${t.footerEmailLabel}: cat123_93@mail.ru`}
+            title="cat123_93@mail.ru"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M4 6h16v12H4z" />
+              <path d="m4 7 8 6 8-6" />
+            </svg>
+          </a>
+          <a
+            className="footer-link"
+            href="https://t.me/baranka_18"
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`${t.footerTelegramLabel}: @baranka_18`}
+            title="@baranka_18"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M21 4 3 11.5l7 2.2L13 20l3.2-8.4L21 4z" />
+              <path d="m10 13.7 6.2-5.1" />
+            </svg>
+          </a>
+        </div>
+      </footer>
     </div>
   );
 }

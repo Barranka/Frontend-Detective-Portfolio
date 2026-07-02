@@ -1,8 +1,82 @@
 const en = {
-  heroEyebrow: 'Digital Investigation Lab',
-  heroTitle: 'Engineering Case Files',
-  heroDescription: 'Senior Frontend Engineer exploring complex challenges and turning them into reliable solutions for products',
-  heroNote: 'Problem —> Analysis —> Solution —> Result:',
+  brandTitle: 'Engineering Case Files',
+  heroTitle: 'Senior Frontend Engineer',
+  heroSubtitle: 'Investigating complex engineering problems',
+  heroDescription: 'My job isn\'t just to implement features. It\'s to help teams find solutions that will still make sense a year from now.',
+  heroDetails: 'Every technical decision starts with understanding the context. Before writing code, I focus on the product problem, user needs, and business constraints. Only then do I choose the implementation.',
+  heroStatement: 'Every engineering problem is just a symptom. The real work begins with finding the root cause. That\'s why every investigation on this site focuses on context, analysis, and solutions that make both the system and the team stronger.',
+  heroNote: 'Incident → Investigation → Root Cause → Solution → Result',
+  approachEyebrow: 'My approach',
+  approachTitle: 'Engineering Mindset',
+  approachDescription: 'Code is only part of investigating. The real complexity begins where product, architecture, processes, and people intersect:',
+  approachItems: [
+    {
+      title: '✔ I study the context, not just the ticket',
+      description: 'Before writing code, I understand the product problem, why it matters now, and what success looks like. This leads to solutions that work not only technically, but also for the business.',
+    },
+    {
+      title: '✔ I look for root causes',
+      description: 'Whether it\'s performance, build failures, or a difficult migration, I don\'t stop at fixing symptoms. I first understand why the problem exists, then choose the right solution.',
+    },
+    {
+      title: '✔ Making Complexity Manageable',
+      description: 'When a task is large and blurry, I break it into steps, risks, and checkpoints. The team can see where to start and where the hard parts are.',
+    },
+    {
+      title: '✔ Bringing the Right People Together',
+      description: 'The best solutions rarely come from one discipline alone. When a problem spans backend, DevOps, QA, design, or product, I bring the right people together to move from discussion to execution faster.',
+    },
+    {
+      title: '✔ Making Future Changes Easier',
+      description: 'Code shouldn\'t depend on the person who wrote it. I document key decisions, capture architectural agreements, and leave systems that other engineers can confidently understand, maintain, and extend.',
+    },
+    {
+      title: '✔ Helping Teams Grow',
+      description: 'Documentation, onboarding, technical talks, and shared knowledge help teams make better decisions and work with confidence. Success isn\'t just a stronger codebase—it\'s a stronger engineering team.',
+    },
+  ],
+  teamValueEyebrow: 'Team value',
+  teamValueTitle: 'What the team gets',
+  teamValueItems: [
+    {
+      title: 'Blockers are removed faster',
+      description: 'Problems are handled at the cause level, not just patched at the surface. The team spends less time returning to the same constraints.',
+    },
+    {
+      title: 'Uncertainty becomes smaller',
+      description: 'A large task turns into a clear plan: what to validate, which risks exist, who needs to be involved, and how to measure the result.',
+    },
+    {
+      title: 'Onboarding becomes easier',
+      description: 'Documentation, clear rules, and explained architecture decisions help new people understand the system faster.',
+    },
+    {
+      title: 'Regressions become less frequent',
+      description: 'When module boundaries, reviews, and quality checks are clear early, changes are less likely to break nearby product areas.',
+    },
+    {
+      title: 'Architecture becomes easier to read',
+      description: 'The team understands where logic belongs, why boundaries exist, and how to extend the interface safely.',
+    },
+    {
+      title: 'Decisions become calmer',
+      description: 'When business, user, and system constraints are visible, technical trade-offs become deliberate instead of reactive.',
+    },
+  ],
+  investigationEyebrow: 'Site concept',
+  investigationTitle: 'Why investigations',
+  investigationDescription: 'Each case is structured as an engineering investigation. The format shows not only the result, but the path: what happened, how the analysis unfolded, where the root cause was, and why the solution worked.',
+  investigationSteps: ['Incident', 'Investigation', 'Cause', 'Solution', 'Result'],
+  impactEyebrow: 'Evidence in numbers',
+  impactTitle: 'Investigation outcomes',
+  impactItems: [
+    '10,000+ objects — map optimization',
+    '40 min → 6 min — build time',
+    '20+ components migrated to Vue 3',
+    'Releases without manual steps',
+  ],
+  skillsTitle: 'Core skills',
+  skillsItems: ['Vue 2/3', 'Nuxt', 'React', 'TypeScript'],
   heroTag1: 'Performance',
   heroTag2: 'Architecture',
   heroTag3: 'Process & Releases',
@@ -13,11 +87,17 @@ const en = {
   heroTagExample1: 'Rendering 10,000 markers; bundle analysis; startup time reductions.',
   heroTagExample2: 'Vue2→Vue3 migration; feature-sliced design; architecture audits.',
   heroTagExample3: 'Zero-touch deploys; pipeline parallelization; automated quality checks.',
-  casesEyebrow: 'Featured Cases',
-  casesTitle: 'Engineering Case Files',
-  casesDescription: 'Explore a collection of real engineering investigations, each describing the problem, research, solution, and measurable result:',
+  casesEyebrow: 'Investigation Archive',
+  casesTitle: 'Engineering Investigation Cases',
+  casesDescription: 'Below are real tasks where the work was not just to write code, but to understand causes, align teams, and carry the solution to a measurable result.',
   casesFilterLabel: 'Filter by type',
   filterAll: 'All',
+  finalCtaLead: 'Every complex system leaves traces.',
+  finalCtaTitle: 'The point is learning how to read them.',
+  finalCtaDescription: 'That is why I work well in complex initiatives: to find the cause, align people around the solution, and leave the system easier for the team to move forward with.',
+  footerTitle: 'Reach me via',
+  footerEmailLabel: 'Email',
+  footerTelegramLabel: 'Telegram',
 };
 
 export default en;
